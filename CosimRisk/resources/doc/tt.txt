@@ -1,0 +1,31 @@
+不知道楼主对于连接池了解不？
+默认会启用连接池的，连接池会有一定数量的现有连接，当使用时，其效率非常高的，几乎不用时间
+只有建立一个新的连接才会使用很多时间的
+
+
+少开（批量执行SQL）
+晚开（用前一刹那打开！）
+早关（用完立刻关闭）
+
+
+sqlconnection可以建立个全局的，但打开和关闭要在关键代码上写
+ 尽量晚打开，早关闭
+
+例如using(sqlconnection conn=new sqlconnection(......))
+{
+    conn.open();
+    sqlcommand cmd=conn.CreateCommand()
+    cmd.commandText="................";
+     cmd.commandText+="................";
+     cmd.commandText+="................";
+    cmd.excute()；
+     conn.close();
+}
+上面这样做，就不是很好，因为数据库连接时很宝贵的
+应该把打开数据库放在关键步骤上
+conn.open();
+cmd.excute()；
+conn.close();
+
+
+不要全局滴，并发访问出问题

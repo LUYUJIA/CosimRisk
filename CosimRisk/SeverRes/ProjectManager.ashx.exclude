@@ -1,0 +1,75 @@
+﻿<%@ WebHandler Language="C#" Class="ProjectManager" %>
+
+using System;
+using System.Web;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+public class ProjectManager : IHttpHandler
+{
+
+    public void ProcessRequest(HttpContext context)
+    {
+        switch (context.Request.QueryString["method"])
+        {
+            case "0":   //修改项目描述
+                try
+                {
+                    string name = context.Request.Form["PRJ_NAME"];
+                    string description = context.Request.Form["PRJ_DESCRIBE"];
+                    JObject ans = new JObject();
+                    if(BLL.ProjectManager.updateProject(name, description))
+                    {
+                        ans.Add("success", true);
+                    }                   
+                    else ans.Add("success", false);
+                    context.Response.Write(ans);
+                } catch (Exception ex)
+                {
+                    JObject ans = new JObject();
+                    ans.Add("success", false);
+                    ans.Add("errMsg", ex.Message);
+                    context.Response.Write(ans);
+                }
+                break;
+            case "1":     //删除project
+                try
+                {
+                    string dataString=context.Request.Params["data"];
+                    string[] datas = dataString.Split(',');
+                    List<MODEL.risk_project> prjList = new List<MODEL.risk_project>();
+                    for(int i=0;i<datas.Length;++i){
+                        MODEL.risk_project project = new MODEL.risk_project();
+                        project.Prj_name = datas[i];
+                        prjList.Add(project);
+                    }
+                    JObject ans = new JObject();
+                    if (BLL.ProjectManager.deleteProject(prjList))
+                    {
+                        ans.Add("success", true);
+                    }
+                    else ans.Add("success", false);
+                    ans.Add("success", true);
+                    context.Response.Write(ans);
+                } catch (Exception ex)
+                {
+                    JObject ans = new JObject();
+                    ans.Add("success", false);
+                    ans.Add("errMsg", ex.Message);
+                    context.Response.Write(ans);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

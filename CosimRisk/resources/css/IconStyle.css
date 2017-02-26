@@ -1,0 +1,97 @@
+﻿.icon-system {
+    background-image: url(/resources/images/motor_mechanic_tools-512.png) !important;
+}
+
+.icon-management {
+    background-image: url(/resources/images/gear_settings_cog_preferences-512.png) !important;
+}
+
+.icon-netgraph {
+    background-image: url(/resources/images/zetta_net_network_icon_flat_v0.png) !important;
+}
+
+.icon-histogram {
+    background-image: url(/resources/images/15_chart_progress_track_tracklist-512.png) !important;
+}
+
+.icon-getresults {
+    background-image: url(/resources/images/Info_information_user_about_card_button_symbol.png) !important;
+}
+
+.icon-help {
+    background-image: url(/resources/images/help-512.png) !important;
+}
+
+.icon-version {
+    background-image: url(/resources/images/version.png) !important;
+}
+
+.icon-Statistics {
+    background-image: url(/resources/images/Statistics.png) !important;
+}
+
+.icon-Probability {
+    background-image: url(/resources/images/Probability.png) !important;
+}
+
+.icon-Risk {
+    background-image: url(/resources/images/image.png) !important;
+}
+
+.icon-Resource {
+    background-image: url(/resources/images/R.png) !important;
+}
+
+.icon-road {
+    background-image: url(/resources/images/computer.png) !important;
+}
+
+.icon-warehouse {
+    background-image: url(/resources/images/warehouse.png) !important;
+}
+
+ .icon-critical {
+    background-image: url(/resources/images/critical.png) !important;
+}
+
+ .label-class{
+            color: #fff;
+            font-size: 15px;
+            }
+
+.logo-background {
+    background-image: url(/resources/images/title.png);
+}
+
+.surface-background {
+    background-image:url(/resources/images/surface.png) 
+}
+.button-background {
+    background-image:url(/resources/images/22.png);
+    background-position:center;
+    width:86px;
+    color:white;
+}
+.left-button-background {
+    background-image:url(/resources/images/left_button.png);
+    background-position:center;
+    width:40px;
+    height:40px;
+    color:white;
+}
+.right-button-background {
+    background-image:url(/resources/images/right_button.png);
+    background-position:center;
+    width:40px;
+    height:40px;
+    color:white;
+}
+.fontshow {
+    font-weight: 900;
+}
+
+.x-grid-row .x-grid-cell {
+    background-color: transparent;
+    cursor:pointer;
+}
+

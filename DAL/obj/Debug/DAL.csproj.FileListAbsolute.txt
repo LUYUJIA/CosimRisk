@@ -1,0 +1,27 @@
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\DAL.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\DAL.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\Model.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\Model.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\obj\Debug\DAL.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\DAL\obj\Debug\DAL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\DAL.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\DAL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\Model.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\Model.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\obj\Debug\DAL.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\obj\Debug\DAL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\DAL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\DAL.dll.config
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\DAL.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\DAL.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\EntityFramework.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\Model.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\Model.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\bin\Debug\EntityFramework.xml
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\obj\Debug\DAL.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\DAL\obj\Debug\DAL.pdb

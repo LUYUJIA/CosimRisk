@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{31C013F3-833A-4C9A-AA55-B50AD97D4B6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C0E7D947-9F1A-4318-B083-CD0771B326D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODEL", "MODEL\MODEL.csproj", "{F2792F65-8C9E-42E7-9F96-29A332CC4A82}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CosimRisk", "CosimRisk\", "{2426FCAD-6F22-4B2A-AFDB-0D73D0CA7851}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "Svn"
+		SccAuxPath = "Svn"
+		SccLocalPath = "Svn"
+		SccProvider = "SubversionScc"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{31c013f3-833a-4c9a-aa55-b50ad97d4b6a}|BLL.dll;{f2792f65-8c9e-42e7-9f96-29a332cc4a82}|Model.dll;{C0E7D947-9F1A-4318-B083-CD0771B326D3}|DAL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/CosimRisk"
+		Debug.AspNetCompiler.PhysicalPath = "CosimRisk\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CosimRisk\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CosimRisk"
+		Release.AspNetCompiler.PhysicalPath = "CosimRisk\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CosimRisk\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "46047"
+		SlnRelativePath = "CosimRisk\"
+	EndProjectSection
+	ProjectSection(SvnOrigin) = preProject
+		@Keys = Enlist,Svn.Uri
+		Enlist = Required
+		Svn.Uri = CosimRisk/
+	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{C0E7D947-9F1A-4318-B083-CD0771B326D3} = {C0E7D947-9F1A-4318-B083-CD0771B326D3}
+		{F2792F65-8C9E-42E7-9F96-29A332CC4A82} = {F2792F65-8C9E-42E7-9F96-29A332CC4A82}
+		{31C013F3-833A-4C9A-AA55-B50AD97D4B6A} = {31C013F3-833A-4C9A-AA55-B50AD97D4B6A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{6AED25FB-F302-4842-BDC8-1168D411E926}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31C013F3-833A-4C9A-AA55-B50AD97D4B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C013F3-833A-4C9A-AA55-B50AD97D4B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C013F3-833A-4C9A-AA55-B50AD97D4B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C013F3-833A-4C9A-AA55-B50AD97D4B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E7D947-9F1A-4318-B083-CD0771B326D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E7D947-9F1A-4318-B083-CD0771B326D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E7D947-9F1A-4318-B083-CD0771B326D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E7D947-9F1A-4318-B083-CD0771B326D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2792F65-8C9E-42E7-9F96-29A332CC4A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2792F65-8C9E-42E7-9F96-29A332CC4A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2792F65-8C9E-42E7-9F96-29A332CC4A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2792F65-8C9E-42E7-9F96-29A332CC4A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2426FCAD-6F22-4B2A-AFDB-0D73D0CA7851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2426FCAD-6F22-4B2A-AFDB-0D73D0CA7851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2426FCAD-6F22-4B2A-AFDB-0D73D0CA7851}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2426FCAD-6F22-4B2A-AFDB-0D73D0CA7851}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6AED25FB-F302-4842-BDC8-1168D411E926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AED25FB-F302-4842-BDC8-1168D411E926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AED25FB-F302-4842-BDC8-1168D411E926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AED25FB-F302-4842-BDC8-1168D411E926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

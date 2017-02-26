@@ -1,0 +1,197 @@
+﻿<%@ WebHandler Language="C#" Class="GetInformation" %>
+
+using System;
+using System.Web;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+
+public class GetInformation : IHttpHandler
+{
+    public void ProcessRequest(HttpContext context)
+    {
+        context.Response.ContentType = "text/plain";
+        switch (context.Request.QueryString["method"])
+        {
+            case "0":
+                try
+                {
+                    int prjId = Int32.Parse(context.Request.QueryString["projectId"]);
+                    int neededLevel = Int32.Parse(context.Request.QueryString["taskLevel"]);
+                    JObject ans = new JObject();
+                    bool hasLoop = true;
+                    if(context.Request.QueryString["projectId"]==null || context.Request.QueryString["taskLevel"]==null)
+                    {
+                        ans.Add("success", false);
+                        ans.Add("errMsg", "该项目信息不存在");
+                        context.Response.Write(ans);
+                        return;
+                    }                  
+                    List<MODEL.risk_task> taskList = BLL.HandleXML.readTasks(prjId);
+                    List<MODEL.risk_link> linkList = BLL.HandleXML.readLinks(prjId);
+                    List<MODEL.risk_task> taskList_Copy = new List<MODEL.risk_task>();
+                    List<MODEL.risk_task> taskList_Sorted = new List<MODEL.risk_task>();
+                    //initialize
+                    bool[] taskId = new bool[taskList.Count * 2];
+                    for (int i = 0; i < taskList.Count; ++i)
+                    {
+                        MODEL.risk_task task = taskList[i];
+                        taskId[task.Task_id] = false;
+                        if (task.Task_level != neededLevel)
+                        {
+                            taskList.Remove(task);
+                            --i;
+                            continue;
+                        }
+                        taskId[task.Task_id] = true;
+                        task.OutDegree = 0;
+                        task.InDegree = 0;
+                        task.MaxSucceedSize = 0;
+                    }
+                    //cal each in/out degree of the task
+                    for (int i = 0; i < linkList.Count; ++i)
+                    {
+                        MODEL.risk_link link = linkList[i];
+                        int outDot = link.Task_pre_id;
+                        int inDot = link.Task_suc_id;
+                        if (!taskId[outDot] || !taskId[inDot])
+                        {
+                            linkList.Remove(link);
+                            --i;
+                            continue;
+                        }
+                        bool outDone = false;
+                        bool inDone = false;
+                        foreach (MODEL.risk_task task in taskList)
+                        {
+                            if (task.Task_id == outDot)
+                            {
+                                ++task.OutDegree;
+                                outDone = true;
+                            }
+
+                            if (task.Task_id == inDot)
+                            {
+                                ++task.InDegree;
+                                inDone = true;
+                            }
+                            if (outDone && inDone)
+                                break;
+                        }
+                    }
+
+                    /*找每个点的最宽的后继
+                     *先找出开始节点和结束节点
+                     *构图
+                     */
+
+                    foreach (MODEL.risk_task task in taskList)
+                    {
+                        taskList_Copy.Add(task.Clone() as MODEL.risk_task);
+                    }
+
+                    for (int i = 0; i < taskList_Copy.Count; ++i)
+                    {
+                        if (taskList_Copy[i].OutDegree == 0)
+                        {
+                            taskList_Copy[i].MaxSucceedSize = 1;
+                        }
+                    }
+                    while (taskList_Copy.Count > 0)
+                    {
+                        hasLoop = true;
+                        for (int i = 0; i < taskList_Copy.Count; ++i)
+                        {
+                            if (taskList_Copy[i].OutDegree == 0)
+                            {
+                                hasLoop = false;
+                                int inTaskId = taskList_Copy[i].Task_id;
+                                int itsMaxSucceedSize = taskList_Copy[i].MaxSucceedSize;
+                                foreach (MODEL.risk_task task in taskList)
+                                {
+                                    if (task.Auto_id == taskList_Copy[i].Auto_id)
+                                        task.MaxSucceedSize = itsMaxSucceedSize;
+                                }
+                                taskList_Copy.RemoveAt(i);
+                                --i;
+                                foreach (MODEL.risk_link link in linkList)
+                                {
+                                    if (link.Task_suc_id == inTaskId)
+                                    {
+                                        for (int j = 0; j < taskList_Copy.Count; ++j)
+                                        {
+                                            if (taskList_Copy[j].Task_id == link.Task_pre_id)
+                                            {
+                                                --taskList_Copy[j].OutDegree;
+                                                taskList_Copy[j].MaxSucceedSize += itsMaxSucceedSize;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                        if (hasLoop)
+                            break;
+                    }
+                    if (hasLoop)
+                    {
+                        ans.Add("success", true);
+                        ans.Add("errMsg", "该任务有环");
+                        context.Response.Write(ans);
+                        return;
+                    }
+                    JavaScriptSerializer ser = new JavaScriptSerializer();
+                    ans.Add("link", ser.Serialize(linkList).ToString());
+                    ans.Add("task", ser.Serialize(taskList).ToString());
+                    ans.Add("success", true);
+                    context.Response.Write(ans);
+                } catch (Exception ex)
+                {
+                    JObject ans = new JObject();
+                    ans.Add("success", false);
+                    ans.Add("errMsg", ex.Message);
+                    context.Response.Write(ans);
+                }
+
+                break;
+            case "1":  // get the information of each project
+                try
+                {
+                    JObject ans = new JObject();
+                    JArray prjLists = new JArray();
+                    List<MODEL.risk_project> PrjList = BLL.HandleXML.readProjects();
+                    foreach(MODEL.risk_project project in PrjList){
+                        JObject prj = new JObject();
+                        prj.Add("PRJ_ID", project.Prj_id);
+                        prj.Add("PRJ_NAME", project.Prj_name);
+                        prj.Add("PRJ_DESCRIBE", project.Prj_describe);
+                        prj.Add("PRJ_DATE", project.Prj_date);
+                        prj.Add("PRJ_XML", project.Prj_xml);
+                        prjLists.Add(prj);
+                    }                                  
+                    ans.Add("data", prjLists);
+                    context.Response.Write(ans);
+                } catch (Exception ex)
+                {
+                    JObject ans = new JObject();
+                    ans.Add("success", false);
+                    ans.Add("errMsg", ex.Message);
+                    context.Response.Write(ans);
+                }
+
+                break;
+            default:
+                break;
+        }
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

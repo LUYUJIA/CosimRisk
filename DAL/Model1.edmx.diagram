@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71475ff1ed144272a3e588e3f841035e" Name="Diagram1" ZoomLevel="108" ShowGrid="false" DisplayType="false" SnapToGrid="true">
+        <EntityTypeShape EntityType="Model.RISK_LINK" Width="1.5" PointX="7.625" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_LINK_TYPE" Width="1.5" PointX="5.375" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_MATH_EXPRESSION" Width="2" PointX="10" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_MATH_EXPRESSION_ARG" Width="2.375" PointX="9.625" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_PRJ_INSTANCE" Width="1.75" PointX="7.625" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_PRJ_VERSION_INFO" Width="2" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_PROJECT" Width="1.5" PointX="2.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_PROJECT_RES_ASSIGNMENT" Width="2.5" PointX="2.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_RESOURCE" Width="1.5" PointX="2" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_RESOURCE_TYPE" Width="1.875" PointX="2.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_TASK" Width="1.5" PointX="5.625" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_TASK_INSTANCE" Width="2" PointX="10" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_TASK_RESOURCE_ASSIGNMENT" Width="2.625" PointX="4.625" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_PRJ_INSTANCE_RES" Width="2" PointX="7.375" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.RISK_TASK_INSTANCE_RES" Width="2.125" PointX="9.875" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.SYS_C005500" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005506" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005501" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005499" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005503" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Model.SYS_C005504" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005505" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005507" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005727" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005502" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

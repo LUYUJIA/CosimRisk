@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="RISK_LINK">
+      <EntityTypeMapping TypeName="Model.RISK_LINK">
+        <MappingFragment StoreEntitySet="RISK_LINK">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="PRJ_ID" ColumnName="PRJ_ID" />
+          <ScalarProperty Name="TASK_PRE_ID" ColumnName="TASK_PRE_ID" />
+          <ScalarProperty Name="TASK_SUC_ID" ColumnName="TASK_SUC_ID" />
+          <ScalarProperty Name="LINK_TYPE" ColumnName="LINK_TYPE" />
+          <ScalarProperty Name="DELAY_DAYS" ColumnName="DELAY_DAYS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_LINK_TYPE">
+      <EntityTypeMapping TypeName="Model.RISK_LINK_TYPE">
+        <MappingFragment StoreEntitySet="RISK_LINK_TYPE">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="LINK_NAME" ColumnName="LINK_NAME" />
+          <ScalarProperty Name="LINK_DESCRIPTION" ColumnName="LINK_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_MATH_EXPRESSION">
+      <EntityTypeMapping TypeName="Model.RISK_MATH_EXPRESSION">
+        <MappingFragment StoreEntitySet="RISK_MATH_EXPRESSION">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_MATH_EXPRESSION_ARG">
+      <EntityTypeMapping TypeName="Model.RISK_MATH_EXPRESSION_ARG">
+        <MappingFragment StoreEntitySet="RISK_MATH_EXPRESSION_ARG">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TASK_AUTO_ID" ColumnName="TASK_AUTO_ID" />
+          <ScalarProperty Name="EXPRESSION_ID" ColumnName="EXPRESSION_ID" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="ACTUAL_VALUE" ColumnName="ACTUAL_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_PRJ_INSTANCE">
+      <EntityTypeMapping TypeName="Model.RISK_PRJ_INSTANCE">
+        <MappingFragment StoreEntitySet="RISK_PRJ_INSTANCE">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="SIM_SEQUENCE" ColumnName="SIM_SEQUENCE" />
+          <ScalarProperty Name="SIM_VERSION" ColumnName="SIM_VERSION" />
+          <ScalarProperty Name="SIM_PROJECT_TIME" ColumnName="SIM_PROJECT_TIME" />
+          <ScalarProperty Name="SIM_PROJECT_COST" ColumnName="SIM_PROJECT_COST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_PRJ_VERSION_INFO">
+      <EntityTypeMapping TypeName="Model.RISK_PRJ_VERSION_INFO">
+        <MappingFragment StoreEntitySet="RISK_PRJ_VERSION_INFO">
+          <ScalarProperty Name="SIM_VERSION_ID" ColumnName="SIM_VERSION_ID" />
+          <ScalarProperty Name="PRI_ID" ColumnName="PRI_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="COUNT" ColumnName="COUNT" />
+          <ScalarProperty Name="DURATION_MAX" ColumnName="DURATION_MAX" />
+          <ScalarProperty Name="SIM_STARTTIME" ColumnName="SIM_STARTTIME" />
+          <ScalarProperty Name="SIM_ENDTIME" ColumnName="SIM_ENDTIME" />
+          <ScalarProperty Name="HAVE_RESOURCE" ColumnName="HAVE_RESOURCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_PROJECT">
+      <EntityTypeMapping TypeName="Model.RISK_PROJECT">
+        <MappingFragment StoreEntitySet="RISK_PROJECT">
+          <ScalarProperty Name="PRJ_ID" ColumnName="PRJ_ID" />
+          <ScalarProperty Name="PRJ_NAME" ColumnName="PRJ_NAME" />
+          <ScalarProperty Name="PRJ_DESCRIBE" ColumnName="PRJ_DESCRIBE" />
+          <ScalarProperty Name="PRJ_DATE" ColumnName="PRJ_DATE" />
+          <ScalarProperty Name="PRJ_XML" ColumnName="PRJ_XML" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_PROJECT_RES_ASSIGNMENT">
+      <EntityTypeMapping TypeName="Model.RISK_PROJECT_RES_ASSIGNMENT">
+        <MappingFragment StoreEntitySet="RISK_PROJECT_RES_ASSIGNMENT">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="PRI_ID" ColumnName="PRI_ID" />
+          <ScalarProperty Name="RESOURCE_ID" ColumnName="RESOURCE_ID" />
+          <ScalarProperty Name="ASSIGNMENT_AMOUNT" ColumnName="ASSIGNMENT_AMOUNT" />
+          <ScalarProperty Name="ASSIGNMENT_REMAINS" ColumnName="ASSIGNMENT_REMAINS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_RESOURCE">
+      <EntityTypeMapping TypeName="Model.RISK_RESOURCE">
+        <MappingFragment StoreEntitySet="RISK_RESOURCE">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="RESOURCE_NAME" ColumnName="RESOURCE_NAME" />
+          <ScalarProperty Name="RESOURCE_TYPE" ColumnName="RESOURCE_TYPE" />
+          <ScalarProperty Name="RESOURCE_AMOUNT" ColumnName="RESOURCE_AMOUNT" />
+          <ScalarProperty Name="RESOURCE_UNIT_PRICE" ColumnName="RESOURCE_UNIT_PRICE" />
+          <ScalarProperty Name="RESOURCE_DESCRIPTION" ColumnName="RESOURCE_DESCRIPTION" />
+          <ScalarProperty Name="RESOURCE_REMAINS" ColumnName="RESOURCE_REMAINS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_RESOURCE_TYPE">
+      <EntityTypeMapping TypeName="Model.RISK_RESOURCE_TYPE">
+        <MappingFragment StoreEntitySet="RISK_RESOURCE_TYPE">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="RESOURCE_TYPE_NAME" ColumnName="RESOURCE_TYPE_NAME" />
+          <ScalarProperty Name="RESOURCE_TYPE_DESCRIPTION" ColumnName="RESOURCE_TYPE_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_TASK">
+      <EntityTypeMapping TypeName="Model.RISK_TASK">
+        <MappingFragment StoreEntitySet="RISK_TASK">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="TASK_ID" ColumnName="TASK_ID" />
+          <ScalarProperty Name="TASK_WBS" ColumnName="TASK_WBS" />
+          <ScalarProperty Name="TASK_NAME" ColumnName="TASK_NAME" />
+          <ScalarProperty Name="TASK_PROJECT_ID" ColumnName="TASK_PROJECT_ID" />
+          <ScalarProperty Name="TASK_IS_SUMMARY" ColumnName="TASK_IS_SUMMARY" />
+          <ScalarProperty Name="TASK_NESTED_PARENT_ID" ColumnName="TASK_NESTED_PARENT_ID" />
+          <ScalarProperty Name="TASK_PRIORITY" ColumnName="TASK_PRIORITY" />
+          <ScalarProperty Name="TASK_EXPRESSION_ID" ColumnName="TASK_EXPRESSION_ID" />
+          <ScalarProperty Name="TASK_LEVEL" ColumnName="TASK_LEVEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_TASK_INSTANCE">
+      <EntityTypeMapping TypeName="Model.RISK_TASK_INSTANCE">
+        <MappingFragment StoreEntitySet="RISK_TASK_INSTANCE">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="TASK_AUTO_ID" ColumnName="TASK_AUTO_ID" />
+          <ScalarProperty Name="PRJ_ID" ColumnName="PRJ_ID" />
+          <ScalarProperty Name="TASK_IS_CRITICAL" ColumnName="TASK_IS_CRITICAL" />
+          <ScalarProperty Name="TASK_ACTUAL_DUR_PERIOD" ColumnName="TASK_ACTUAL_DUR_PERIOD" />
+          <ScalarProperty Name="TASK_VE" ColumnName="TASK_VE" />
+          <ScalarProperty Name="TASK_VL" ColumnName="TASK_VL" />
+          <ScalarProperty Name="SIM_SEQUENCE" ColumnName="SIM_SEQUENCE" />
+          <ScalarProperty Name="SIM_VERSION" ColumnName="SIM_VERSION" />
+          <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_TASK_RESOURCE_ASSIGNMENT">
+      <EntityTypeMapping TypeName="Model.RISK_TASK_RESOURCE_ASSIGNMENT">
+        <MappingFragment StoreEntitySet="RISK_TASK_RESOURCE_ASSIGNMENT">
+          <ScalarProperty Name="AUTO_ID" ColumnName="AUTO_ID" />
+          <ScalarProperty Name="TASK_AUTO_ID" ColumnName="TASK_AUTO_ID" />
+          <ScalarProperty Name="RESOURCE_ID" ColumnName="RESOURCE_ID" />
+          <ScalarProperty Name="ASSIGNMENT_AMOUNT" ColumnName="ASSIGNMENT_AMOUNT" />
+          <ScalarProperty Name="ASSIGNMENT_OWN" ColumnName="ASSIGNMENT_OWN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_PRJ_INSTANCE_RES">
+      <EntityTypeMapping TypeName="Model.RISK_PRJ_INSTANCE_RES">
+        <MappingFragment StoreEntitySet="RISK_PRJ_INSTANCE_RES">
+          <ScalarProperty Name="PRJ_INSTANCE_ID" ColumnName="PRJ_INSTANCE_ID" />
+          <ScalarProperty Name="RESOURCE_ID" ColumnName="RESOURCE_ID" />
+          <ScalarProperty Name="COST_AMOUNT" ColumnName="COST_AMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RISK_TASK_INSTANCE_RES">
+      <EntityTypeMapping TypeName="Model.RISK_TASK_INSTANCE_RES">
+        <MappingFragment StoreEntitySet="RISK_TASK_INSTANCE_RES">
+          <ScalarProperty Name="TASK_INSTANCE_ID" ColumnName="TASK_INSTANCE_ID" />
+          <ScalarProperty Name="TASK_AUTO_ID" ColumnName="TASK_AUTO_ID" />
+          <ScalarProperty Name="RESOURCE_ID" ColumnName="RESOURCE_ID" />
+          <ScalarProperty Name="WAIT_TIME" ColumnName="WAIT_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

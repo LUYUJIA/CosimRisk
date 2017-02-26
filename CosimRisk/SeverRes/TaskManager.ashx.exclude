@@ -1,0 +1,27 @@
+﻿<%@ WebHandler Language="C#" Class="TaskManager" %>
+
+using System;
+using System.Web;
+
+public class TaskManager : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        switch (context.Request.QueryString["method"])
+        {
+            case "0":   //设置任务属性
+                MODEL.risk_task task = new MODEL.risk_task();
+                string distributionType = context.Request.QueryString["distributionType"];
+                string taskType = context.Request.QueryString["taskType"];
+                string taskPriority = context.Request.QueryString["taskPriority"];
+                
+                break;
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+
+}

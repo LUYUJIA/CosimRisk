@@ -1,0 +1,79 @@
+﻿<%@ WebHandler Language="C#" Class="ReadXML" %>
+
+using System;
+using System.Web;
+using Newtonsoft.Json.Linq;
+using System.IO;
+using System.Xml;
+using System.Text;
+public class ReadXML : IHttpHandler
+{
+    protected XmlDocument xmlDoc = null;
+    protected XmlElement root = null;
+    protected XmlNamespaceManager nsmgr = null;
+    protected XmlReader xmlContent = null;
+    public void ProcessRequest(HttpContext context)
+    {
+
+        if (context.Request.Files.Count == 0)
+        {
+            context.Response.Write("{success:false}");
+            return;
+        }
+        try
+        {
+            HttpPostedFile file = context.Request.Files[0];
+            string projectDescription = context.Request.Form["PRJ_DESCRIBE"];
+            if (projectDescription == null)
+                projectDescription = "";
+            if (file.ContentLength > 0 && !string.IsNullOrEmpty(file.FileName))
+            {
+                int FileLen = file.ContentLength;
+                byte[] input = new byte[FileLen];
+                System.IO.Stream UpLoadStream = file.InputStream;
+                UpLoadStream.Read(input, 0, FileLen);
+                UpLoadStream.Position = 0;
+                StreamReader sr = new System.IO.StreamReader(UpLoadStream, System.Text.Encoding.Default);
+                string ans = sr.ReadToEnd();
+                sr.Close();
+                xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(ans);
+                XmlReaderSettings settings = new XmlReaderSettings();
+                settings.IgnoreComments = true;
+                settings.IgnoreProcessingInstructions = true;
+                settings.IgnoreWhitespace = true;
+                xmlContent = new XmlTextReader(new StringReader(xmlDoc.OuterXml));
+            }
+
+            string Msg = BLL.HandleXML.SaveToDB(xmlDoc,projectDescription);
+            if (Msg == "")
+            {
+                context.Response.Write("{success:true}");
+                return;
+            }
+            else
+            {
+                JObject ans = new JObject();
+                ans.Add("success", false);
+                ans.Add("errMsg", Msg);
+                context.Response.Write(ans);
+            }
+
+        } catch (Exception ex)
+        {
+            JObject ans = new JObject();
+            ans.Add("success", false);
+            ans.Add("errMsg", ex.Message);
+            context.Response.Write(ans);
+        }
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

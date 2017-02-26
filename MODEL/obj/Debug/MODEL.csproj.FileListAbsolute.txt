@@ -1,0 +1,14 @@
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\MODEL\bin\Debug\Model.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\MODEL\bin\Debug\Model.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\MODEL\obj\Debug\Model.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\MODEL\obj\Debug\Model.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\MODEL\bin\Debug\Model.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\MODEL\bin\Debug\Model.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\MODEL\obj\Debug\Model.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\MODEL\obj\Debug\Model.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\MODEL\bin\Debug\Model.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\MODEL\bin\Debug\Model.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\MODEL\obj\Debug\Model.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\MODEL\obj\Debug\Model.pdb

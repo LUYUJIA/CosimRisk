@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="RISK_LINK">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRJ_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_PRE_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_SUC_ID" Type="Int64" Nullable="false" />
+    <Property Name="LINK_TYPE" Type="Int64" Nullable="false" />
+    <Property Name="DELAY_DAYS" Type="Int64" />
+  </EntityType>
+  <EntityType Name="RISK_LINK_TYPE">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="LINK_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LINK_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RISK_MATH_EXPRESSION">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RISK_MATH_EXPRESSION_ARG">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="TASK_AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="EXPRESSION_ID" Type="Int64" Nullable="false" />
+    <Property Name="VALUE" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ACTUAL_VALUE" Type="Decimal" Precision="11" Scale="2" />
+  </EntityType>
+  <EntityType Name="RISK_PRJ_INSTANCE">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="SIM_SEQUENCE" Type="Int64" />
+    <Property Name="SIM_VERSION" Type="Int64" />
+    <Property Name="SIM_PROJECT_TIME" Type="Decimal" Precision="16" Scale="8" />
+    <Property Name="SIM_PROJECT_COST" Type="Int64" />
+    <NavigationProperty Name="RISK_PRJ_VERSION_INFO" Relationship="Self.SYS_C005500" FromRole="RISK_PRJ_INSTANCE" ToRole="RISK_PRJ_VERSION_INFO" />
+    <NavigationProperty Name="RISK_PRJ_INSTANCE_RES" Relationship="Self.SYS_C005506" FromRole="RISK_PRJ_INSTANCE" ToRole="RISK_PRJ_INSTANCE_RES" />
+  </EntityType>
+  <EntityType Name="RISK_PRJ_VERSION_INFO">
+    <Key>
+      <PropertyRef Name="SIM_VERSION_ID" />
+    </Key>
+    <Property Name="SIM_VERSION_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRI_ID" Type="Int64" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="COUNT" Type="Int64" />
+    <Property Name="DURATION_MAX" Type="Int64" />
+    <Property Name="SIM_STARTTIME" Type="DateTime" />
+    <Property Name="SIM_ENDTIME" Type="DateTime" />
+    <Property Name="HAVE_RESOURCE" Type="Int16" />
+    <NavigationProperty Name="RISK_PRJ_INSTANCE" Relationship="Self.SYS_C005500" FromRole="RISK_PRJ_VERSION_INFO" ToRole="RISK_PRJ_INSTANCE" />
+    <NavigationProperty Name="RISK_TASK_INSTANCE" Relationship="Self.SYS_C005501" FromRole="RISK_PRJ_VERSION_INFO" ToRole="RISK_TASK_INSTANCE" />
+  </EntityType>
+  <EntityType Name="RISK_PROJECT">
+    <Key>
+      <PropertyRef Name="PRJ_ID" />
+    </Key>
+    <Property Name="PRJ_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRJ_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PRJ_DESCRIBE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PRJ_DATE" Type="DateTime" />
+    <Property Name="PRJ_XML" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="RISK_TASK" Relationship="Self.SYS_C005499" FromRole="RISK_PROJECT" ToRole="RISK_TASK" />
+    <NavigationProperty Name="RISK_PROJECT_RES_ASSIGNMENT" Relationship="Self.SYS_C005503" FromRole="RISK_PROJECT" ToRole="RISK_PROJECT_RES_ASSIGNMENT" />
+  </EntityType>
+  <EntityType Name="RISK_PROJECT_RES_ASSIGNMENT">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRI_ID" Type="Int64" />
+    <Property Name="RESOURCE_ID" Type="Int64" />
+    <Property Name="ASSIGNMENT_AMOUNT" Type="Int64" />
+    <Property Name="ASSIGNMENT_REMAINS" Type="Int64" />
+    <NavigationProperty Name="RISK_PROJECT" Relationship="Self.SYS_C005503" FromRole="RISK_PROJECT_RES_ASSIGNMENT" ToRole="RISK_PROJECT" />
+    <NavigationProperty Name="RISK_RESOURCE" Relationship="Self.SYS_C005504" FromRole="RISK_PROJECT_RES_ASSIGNMENT" ToRole="RISK_RESOURCE" />
+  </EntityType>
+  <EntityType Name="RISK_RESOURCE">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="RESOURCE_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RESOURCE_TYPE" Type="Int64" Nullable="false" />
+    <Property Name="RESOURCE_AMOUNT" Type="Int64" Nullable="false" />
+    <Property Name="RESOURCE_UNIT_PRICE" Type="Decimal" Precision="18" Scale="9" />
+    <Property Name="RESOURCE_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RESOURCE_REMAINS" Type="Int64" />
+    <NavigationProperty Name="RISK_PROJECT_RES_ASSIGNMENT" Relationship="Self.SYS_C005504" FromRole="RISK_RESOURCE" ToRole="RISK_PROJECT_RES_ASSIGNMENT" />
+    <NavigationProperty Name="RISK_RESOURCE_TYPE" Relationship="Self.SYS_C005505" FromRole="RISK_RESOURCE" ToRole="RISK_RESOURCE_TYPE" />
+    <NavigationProperty Name="RISK_TASK_RESOURCE_ASSIGNMENT" Relationship="Self.SYS_C005507" FromRole="RISK_RESOURCE" ToRole="RISK_TASK_RESOURCE_ASSIGNMENT" />
+  </EntityType>
+  <EntityType Name="RISK_RESOURCE_TYPE">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="RESOURCE_TYPE_NAME" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="RESOURCE_TYPE_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RISK_RESOURCE" Relationship="Self.SYS_C005505" FromRole="RISK_RESOURCE_TYPE" ToRole="RISK_RESOURCE" />
+  </EntityType>
+  <EntityType Name="RISK_TASK">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_WBS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TASK_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TASK_PROJECT_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_IS_SUMMARY" Type="Int16" />
+    <Property Name="TASK_NESTED_PARENT_ID" Type="Int64" />
+    <Property Name="TASK_PRIORITY" Type="Int64" />
+    <Property Name="TASK_EXPRESSION_ID" Type="Int64" />
+    <Property Name="TASK_LEVEL" Type="Int64" />
+    <NavigationProperty Name="RISK_PROJECT" Relationship="Self.SYS_C005499" FromRole="RISK_TASK" ToRole="RISK_PROJECT" />
+    <NavigationProperty Name="RISK_TASK_RESOURCE_ASSIGNMENT" Relationship="Self.SYS_C005727" FromRole="RISK_TASK" ToRole="RISK_TASK_RESOURCE_ASSIGNMENT" />
+  </EntityType>
+  <EntityType Name="RISK_TASK_INSTANCE">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRJ_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_IS_CRITICAL" Type="Int16" />
+    <Property Name="TASK_ACTUAL_DUR_PERIOD" Type="Decimal" Precision="18" Scale="9" />
+    <Property Name="TASK_VE" Type="Decimal" Precision="18" Scale="9" />
+    <Property Name="TASK_VL" Type="Decimal" Precision="18" Scale="9" />
+    <Property Name="SIM_SEQUENCE" Type="Int64" />
+    <Property Name="SIM_VERSION" Type="Int64" />
+    <Property Name="START_TIME" Type="Decimal" Precision="18" Scale="9" />
+    <NavigationProperty Name="RISK_PRJ_VERSION_INFO" Relationship="Self.SYS_C005501" FromRole="RISK_TASK_INSTANCE" ToRole="RISK_PRJ_VERSION_INFO" />
+    <NavigationProperty Name="RISK_TASK_INSTANCE_RES" Relationship="Self.SYS_C005502" FromRole="RISK_TASK_INSTANCE" ToRole="RISK_TASK_INSTANCE_RES" />
+  </EntityType>
+  <EntityType Name="RISK_TASK_RESOURCE_ASSIGNMENT">
+    <Key>
+      <PropertyRef Name="AUTO_ID" />
+    </Key>
+    <Property Name="AUTO_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_AUTO_ID" Type="Int64" />
+    <Property Name="RESOURCE_ID" Type="Int64" />
+    <Property Name="ASSIGNMENT_AMOUNT" Type="Int64" />
+    <Property Name="ASSIGNMENT_OWN" Type="Int64" />
+    <NavigationProperty Name="RISK_RESOURCE" Relationship="Self.SYS_C005507" FromRole="RISK_TASK_RESOURCE_ASSIGNMENT" ToRole="RISK_RESOURCE" />
+    <NavigationProperty Name="RISK_TASK" Relationship="Self.SYS_C005727" FromRole="RISK_TASK_RESOURCE_ASSIGNMENT" ToRole="RISK_TASK" />
+  </EntityType>
+  <EntityType Name="RISK_PRJ_INSTANCE_RES">
+    <Key>
+      <PropertyRef Name="PRJ_INSTANCE_ID" />
+    </Key>
+    <Property Name="PRJ_INSTANCE_ID" Type="Int64" Nullable="false" />
+    <Property Name="RESOURCE_ID" Type="Int64" />
+    <Property Name="COST_AMOUNT" Type="Int64" />
+    <NavigationProperty Name="RISK_PRJ_INSTANCE" Relationship="Self.SYS_C005506" FromRole="RISK_PRJ_INSTANCE_RES" ToRole="RISK_PRJ_INSTANCE" />
+  </EntityType>
+  <EntityType Name="RISK_TASK_INSTANCE_RES">
+    <Key>
+      <PropertyRef Name="TASK_INSTANCE_ID" />
+    </Key>
+    <Property Name="TASK_INSTANCE_ID" Type="Int64" Nullable="false" />
+    <Property Name="TASK_AUTO_ID" Type="Int64" />
+    <Property Name="RESOURCE_ID" Type="Int64" />
+    <Property Name="WAIT_TIME" Type="Decimal" Precision="11" Scale="2" />
+    <NavigationProperty Name="RISK_TASK_INSTANCE" Relationship="Self.SYS_C005502" FromRole="RISK_TASK_INSTANCE_RES" ToRole="RISK_TASK_INSTANCE" />
+  </EntityType>
+  <Association Name="SYS_C005500">
+    <End Role="RISK_PRJ_VERSION_INFO" Type="Self.RISK_PRJ_VERSION_INFO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_PRJ_INSTANCE" Type="Self.RISK_PRJ_INSTANCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_PRJ_VERSION_INFO">
+        <PropertyRef Name="SIM_VERSION_ID" />
+      </Principal>
+      <Dependent Role="RISK_PRJ_INSTANCE">
+        <PropertyRef Name="SIM_VERSION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005506">
+    <End Role="RISK_PRJ_INSTANCE" Type="Self.RISK_PRJ_INSTANCE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_PRJ_INSTANCE_RES" Type="Self.RISK_PRJ_INSTANCE_RES" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_PRJ_INSTANCE">
+        <PropertyRef Name="AUTO_ID" />
+      </Principal>
+      <Dependent Role="RISK_PRJ_INSTANCE_RES">
+        <PropertyRef Name="PRJ_INSTANCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005501">
+    <End Role="RISK_PRJ_VERSION_INFO" Type="Self.RISK_PRJ_VERSION_INFO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_TASK_INSTANCE" Type="Self.RISK_TASK_INSTANCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_PRJ_VERSION_INFO">
+        <PropertyRef Name="SIM_VERSION_ID" />
+      </Principal>
+      <Dependent Role="RISK_TASK_INSTANCE">
+        <PropertyRef Name="SIM_VERSION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005499">
+    <End Role="RISK_PROJECT" Type="Self.RISK_PROJECT" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_TASK" Type="Self.RISK_TASK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_PROJECT">
+        <PropertyRef Name="PRJ_ID" />
+      </Principal>
+      <Dependent Role="RISK_TASK">
+        <PropertyRef Name="TASK_PROJECT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005503">
+    <End Role="RISK_PROJECT" Type="Self.RISK_PROJECT" Multiplicity="0..1" />
+    <End Role="RISK_PROJECT_RES_ASSIGNMENT" Type="Self.RISK_PROJECT_RES_ASSIGNMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_PROJECT">
+        <PropertyRef Name="PRJ_ID" />
+      </Principal>
+      <Dependent Role="RISK_PROJECT_RES_ASSIGNMENT">
+        <PropertyRef Name="PRI_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005504">
+    <End Role="RISK_RESOURCE" Type="Self.RISK_RESOURCE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_PROJECT_RES_ASSIGNMENT" Type="Self.RISK_PROJECT_RES_ASSIGNMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_RESOURCE">
+        <PropertyRef Name="AUTO_ID" />
+      </Principal>
+      <Dependent Role="RISK_PROJECT_RES_ASSIGNMENT">
+        <PropertyRef Name="RESOURCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005505">
+    <End Role="RISK_RESOURCE_TYPE" Type="Self.RISK_RESOURCE_TYPE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_RESOURCE" Type="Self.RISK_RESOURCE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_RESOURCE_TYPE">
+        <PropertyRef Name="AUTO_ID" />
+      </Principal>
+      <Dependent Role="RISK_RESOURCE">
+        <PropertyRef Name="RESOURCE_TYPE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005507">
+    <End Role="RISK_RESOURCE" Type="Self.RISK_RESOURCE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_TASK_RESOURCE_ASSIGNMENT" Type="Self.RISK_TASK_RESOURCE_ASSIGNMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_RESOURCE">
+        <PropertyRef Name="AUTO_ID" />
+      </Principal>
+      <Dependent Role="RISK_TASK_RESOURCE_ASSIGNMENT">
+        <PropertyRef Name="RESOURCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005727">
+    <End Role="RISK_TASK" Type="Self.RISK_TASK" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_TASK_RESOURCE_ASSIGNMENT" Type="Self.RISK_TASK_RESOURCE_ASSIGNMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_TASK">
+        <PropertyRef Name="AUTO_ID" />
+      </Principal>
+      <Dependent Role="RISK_TASK_RESOURCE_ASSIGNMENT">
+        <PropertyRef Name="TASK_AUTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SYS_C005502">
+    <End Role="RISK_TASK_INSTANCE" Type="Self.RISK_TASK_INSTANCE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RISK_TASK_INSTANCE_RES" Type="Self.RISK_TASK_INSTANCE_RES" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RISK_TASK_INSTANCE">
+        <PropertyRef Name="AUTO_ID" />
+      </Principal>
+      <Dependent Role="RISK_TASK_INSTANCE_RES">
+        <PropertyRef Name="TASK_INSTANCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RISK_LINK" EntityType="Self.RISK_LINK" />
+    <EntitySet Name="RISK_LINK_TYPE" EntityType="Self.RISK_LINK_TYPE" />
+    <EntitySet Name="RISK_MATH_EXPRESSION" EntityType="Self.RISK_MATH_EXPRESSION" />
+    <EntitySet Name="RISK_MATH_EXPRESSION_ARG" EntityType="Self.RISK_MATH_EXPRESSION_ARG" />
+    <EntitySet Name="RISK_PRJ_INSTANCE" EntityType="Self.RISK_PRJ_INSTANCE" />
+    <EntitySet Name="RISK_PRJ_VERSION_INFO" EntityType="Self.RISK_PRJ_VERSION_INFO" />
+    <EntitySet Name="RISK_PROJECT" EntityType="Self.RISK_PROJECT" />
+    <EntitySet Name="RISK_PROJECT_RES_ASSIGNMENT" EntityType="Self.RISK_PROJECT_RES_ASSIGNMENT" />
+    <EntitySet Name="RISK_RESOURCE" EntityType="Self.RISK_RESOURCE" />
+    <EntitySet Name="RISK_RESOURCE_TYPE" EntityType="Self.RISK_RESOURCE_TYPE" />
+    <EntitySet Name="RISK_TASK" EntityType="Self.RISK_TASK" />
+    <EntitySet Name="RISK_TASK_INSTANCE" EntityType="Self.RISK_TASK_INSTANCE" />
+    <EntitySet Name="RISK_TASK_RESOURCE_ASSIGNMENT" EntityType="Self.RISK_TASK_RESOURCE_ASSIGNMENT" />
+    <EntitySet Name="RISK_PRJ_INSTANCE_RES" EntityType="Self.RISK_PRJ_INSTANCE_RES" />
+    <EntitySet Name="RISK_TASK_INSTANCE_RES" EntityType="Self.RISK_TASK_INSTANCE_RES" />
+    <AssociationSet Name="SYS_C005500" Association="Self.SYS_C005500">
+      <End Role="RISK_PRJ_VERSION_INFO" EntitySet="RISK_PRJ_VERSION_INFO" />
+      <End Role="RISK_PRJ_INSTANCE" EntitySet="RISK_PRJ_INSTANCE" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005506" Association="Self.SYS_C005506">
+      <End Role="RISK_PRJ_INSTANCE" EntitySet="RISK_PRJ_INSTANCE" />
+      <End Role="RISK_PRJ_INSTANCE_RES" EntitySet="RISK_PRJ_INSTANCE_RES" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005501" Association="Self.SYS_C005501">
+      <End Role="RISK_PRJ_VERSION_INFO" EntitySet="RISK_PRJ_VERSION_INFO" />
+      <End Role="RISK_TASK_INSTANCE" EntitySet="RISK_TASK_INSTANCE" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005499" Association="Self.SYS_C005499">
+      <End Role="RISK_PROJECT" EntitySet="RISK_PROJECT" />
+      <End Role="RISK_TASK" EntitySet="RISK_TASK" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005503" Association="Self.SYS_C005503">
+      <End Role="RISK_PROJECT" EntitySet="RISK_PROJECT" />
+      <End Role="RISK_PROJECT_RES_ASSIGNMENT" EntitySet="RISK_PROJECT_RES_ASSIGNMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005504" Association="Self.SYS_C005504">
+      <End Role="RISK_RESOURCE" EntitySet="RISK_RESOURCE" />
+      <End Role="RISK_PROJECT_RES_ASSIGNMENT" EntitySet="RISK_PROJECT_RES_ASSIGNMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005505" Association="Self.SYS_C005505">
+      <End Role="RISK_RESOURCE_TYPE" EntitySet="RISK_RESOURCE_TYPE" />
+      <End Role="RISK_RESOURCE" EntitySet="RISK_RESOURCE" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005507" Association="Self.SYS_C005507">
+      <End Role="RISK_RESOURCE" EntitySet="RISK_RESOURCE" />
+      <End Role="RISK_TASK_RESOURCE_ASSIGNMENT" EntitySet="RISK_TASK_RESOURCE_ASSIGNMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005727" Association="Self.SYS_C005727">
+      <End Role="RISK_TASK" EntitySet="RISK_TASK" />
+      <End Role="RISK_TASK_RESOURCE_ASSIGNMENT" EntitySet="RISK_TASK_RESOURCE_ASSIGNMENT" />
+    </AssociationSet>
+    <AssociationSet Name="SYS_C005502" Association="Self.SYS_C005502">
+      <End Role="RISK_TASK_INSTANCE" EntitySet="RISK_TASK_INSTANCE" />
+      <End Role="RISK_TASK_INSTANCE_RES" EntitySet="RISK_TASK_INSTANCE_RES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

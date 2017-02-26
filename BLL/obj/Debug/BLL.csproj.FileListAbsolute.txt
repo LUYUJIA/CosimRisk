@@ -1,0 +1,37 @@
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\BLL.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\BLL.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\DAL.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Model.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\DAL.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Model.pdb
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\obj\Debug\BLL.dll
+C:\Users\forrest0402\Documents\Visual Studio 2012\Projects\CosimRisk(woqu)\CosimRisk\BLL\obj\Debug\BLL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\BLL.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\BLL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\DAL.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Model.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\DAL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Model.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Newtonsoft.Json.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\obj\Debug\BLL.dll
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\obj\Debug\BLL.pdb
+C:\朱耀琴\CosimRisk(woqu)\CosimRisk\BLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\BLL.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\BLL.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\DAL.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\Model.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\EntityFramework.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\DAL.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\Model.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\bin\Debug\EntityFramework.xml
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\obj\Debug\BLL.dll
+C:\Users\forre_000\Documents\Visual Studio 2013\Projects\CosimRisk\CosimRisk\BLL\obj\Debug\BLL.pdb
