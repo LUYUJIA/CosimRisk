@@ -14,3 +14,9 @@
 Fig.1 Project’s oriented graph (Chinese interface version)
 
 ### architecture
+In this System, we use MVC (Model View Controller) model. MODEL module manages all data structure and the View manages all display
+pages toward to users, namely CosimRisk module in this system. Refer to Controller, BLL module manages all logical business processes and DAL module manages all operations on database. The user can interact with this system through geting and posting data with the
+website named ConsimRisk, and ConsimRisk will pass data to BLL based on data models. Then BLL will deal with some requirements of the user, operating database through DAL in the same time. After that, BLL will visualize processed data and display it on CosimRisk.
+The following diagram dscribes the process structure of this system. 
+
+<img src="images/fig2.jpg" width="700px"/>
