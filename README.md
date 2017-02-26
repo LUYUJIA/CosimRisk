@@ -11,6 +11,6 @@
 
 <img src="images/fig1.jpg" width="700px"/>
 
-Fig.1 Project’s tasks oriented graph(Chinese interface version)
+Fig.1 Project’s oriented graph (Chinese interface version)
 
 ### architecture
